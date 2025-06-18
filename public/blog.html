@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - TechBridge Innovations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="video/logo.png" type="image/png">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="video/logo.png" alt="TechBridge Logo" width="40" height="40">
+                <span class="logo-text">TechBridge</span>
+            </a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Open Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-nav" class="mobile-nav">
+        <button id="mobile-nav-close" class="mobile-nav-close" aria-label="Close Menu">&times;</button>
+        <nav class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link active">Home</a>
+            <a href="about.html" class="mobile-nav-link">About Us</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+            <a href="blog.html" class="mobile-nav-link">Blog</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+        </nav>
+    </div>
+
+    <main>
+        <section class="page-header-blog">
+            <div class="container text-center fade-in-up">
+                <h1>Tech Insights for SA Businesses</h1>
+                <div class="section-divider"></div>
+                <p style="max-width: 700px; margin: 0 auto; font-size: 1.125rem;">Expert advice on cybersecurity, cloud technology, and automation to help you stay ahead.</p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="blog-grid fade-in-up">
+                    <a href="blog-post.html" class="blog-card" style="text-decoration: none;">
+                        <img src="video/vecteezy_document-management-system-dms-online-documentation_43535268_000.webp" alt="Cybersecurity topic">
+                        <div class="blog-card-content">
+                            <h3 class="card-title">5 Common Cybersecurity Mistakes SMEs Make</h3>
+                            <p style="font-size: 0.9rem;">Learn how to avoid simple errors that could put your business at risk.</p>
+                            <span class="text-primary" style="font-weight: 600;">Read More &rarr;</span>
+                        </div>
+                    </a>
+                    </div>
+            </div>
+        </section>
+    </main>
+  
+    <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div>
+                        <h3 class="footer-title">TechBridge</h3>
+                        <p style="font-size: 0.9rem;">Empowering South African businesses with practical technology solutions and expert support.</p>
+                    </div>
+                    <div>
+                        <h3 class="footer-title">Navigate</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="footer-title">Contact</h3>
+                        <ul class="footer-links" style="font-style: normal;">
+                            <li>Randburg, Gauteng</li>
+                            <li><a href="tel:+27761097412">(+27) 76 109 7412</a></li>
+                            <li><a href="mailto:lindiwe@linkedme.co.za">lindiwe@linkedme.co.za</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="footer-title">Connect</h3>
+                        <p>Follow us on <a href="https://www.linkedin.com/company/techbridge-innovations" target="_blank">LinkedIn</a></p>
+                        </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="current-year"></span> TechBridge Innovations (Pty) Ltd. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+      <script src="script.js"></script>
+</body>
+</html>

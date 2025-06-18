@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing & Plans - TechBridge Innovations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="video/logo.png" type="image/png">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="video/logo.png" alt="TechBridge Logo" width="40" height="40">
+                <span class="logo-text">TechBridge</span>
+            </a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Open Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-nav" class="mobile-nav">
+        <button id="mobile-nav-close" class="mobile-nav-close" aria-label="Close Menu">&times;</button>
+        <nav class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link active">Home</a>
+            <a href="about.html" class="mobile-nav-link">About Us</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+            <a href="blog.html" class="mobile-nav-link">Blog</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+        </nav>
+    </div>
+
+    <main>
+        <section class="page-header-pricing">
+            <div class="container text-center fade-in-up">
+                <h1>Flexible Plans & Services</h1>
+                <div class="section-divider"></div>
+                <p style="max-width: 700px; margin: 0 auto; font-size: 1.125rem;">Transparent pricing and flexible options designed to fit the unique needs of your business, from ongoing support to one-time projects.</p>
+            </div>
+        </section>
+
+        <section class="section">
+    <div class="container">
+        <div class="pricing-toggle fade-in-up">
+            <input type="radio" name="pricing-type" id="monthly" checked>
+            <label for="monthly">Monthly Support Plans</label>
+            <input type="radio" name="pricing-type" id="adhoc">
+            <label for="adhoc">Ad-hoc & Consulting</label>
+        </div>
+
+        <div id="monthly-plans">
+            <div class="grid grid-cols-3 fade-in-up" style="gap: 2rem; align-items: stretch;">
+                
+                <div class="card">
+                    <h3 class="card-title">Basic Plan</h3>
+                    <p class="plan-description">Essential remote assistance for day-to-day operations.</p>
+                    <div class="plan-price">R107 <span>/ month</span></div>
+                    <ul class="feature-list">
+                        <li><div class="icon">&#10003;</div> Remote support during business hours</li>
+                        <li><div class="icon">&#10003;</div> Standard software troubleshooting</li>
+                        <li><div class="icon">&#10003;</div> Email & Ticketing support system</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary plan-button">Choose Basic</a>
+                </div>
+
+                <div class="card card-highlighted">
+                    <div class="popular-badge">POPULAR</div>
+                    <h3 class="card-title">Standard Plan</h3>
+                    <p class="plan-description">Comprehensive and proactive care for peace of mind.</p>
+                    <div class="plan-price">R167 <span>/ month</span></div>
+                    <ul class="feature-list">
+                        <li><div class="icon">&#10003;</div> All Basic Plan features</li>
+                        <li><div class="icon">&#10003;</div> Priority response times</li>
+                        <li><div class="icon">&#10003;</div> Monthly system health checks</li>
+                        <li><div class="icon">&#10003;</div> Basic security monitoring & patching</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary plan-button">Choose Standard</a>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Premium Plan</h3>
+                    <p class="plan-description">A strategic IT partnership for businesses focused on growth.</p>
+                    <div class="plan-price">R205 <span>/ month</span></div>
+                    <ul class="feature-list">
+                        <li><div class="icon">&#10003;</div> All Standard Plan features</li>
+                        <li><div class="icon">&#10003;</div> Extended hours support</li>
+                        <li><div class="icon">&#10003;</div> Quarterly IT strategy reviews</li>
+                        <li><div class="icon">&#10003;</div> Discounted project rates</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary plan-button">Choose Premium</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="adhoc-services" style="display: none;">
+            <div class="grid grid-cols-2 fade-in-up" style="gap: 2rem; max-width: 800px; margin: 0 auto;">
+
+                <div class="card">
+                    <h3 class="card-title">Ad-hoc IT Support</h3>
+                    <p class="plan-description">Pay-as-you-go remote support for troubleshooting and immediate assistance.</p>
+                    <div class="plan-price">Contact Us</div>
+                    <p style="font-size: 0.9rem; margin-top: 1.5rem;">Perfect for when you need a quick fix without a monthly commitment.</p>
+                    <a href="mailto:lindiwe@linkedme.co.za?subject=Request%20for%20Ad-hoc%20Support" class="btn btn-secondary plan-button">Request Support</a>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Training & Consulting</h3>
+                    <p class="plan-description">Book individual training sessions or strategic consultations on a project basis.</p>
+                     <div class="plan-price">Project-Based</div>
+                     <p style="font-size: 0.9rem; margin-top: 1.5rem;">Ideal for Cybersecurity Training, RPA scoping, or Cloud Migration strategy sessions.</p>
+                    <a href="https://calendly.com/lindiwe-linkedme/30min" class="btn btn-secondary plan-button">Book a Consultation</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+    
+   <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div>
+                        <h3 class="footer-title">TechBridge</h3>
+                        <p style="font-size: 0.9rem;">Empowering South African businesses with practical technology solutions and expert support.</p>
+                    </div>
+                    <div>
+                        <h3 class="footer-title">Navigate</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="footer-title">Contact</h3>
+                        <ul class="footer-links" style="font-style: normal;">
+                            <li>Randburg, Gauteng</li>
+                            <li><a href="tel:+27761097412">(+27) 76 109 7412</a></li>
+                            <li><a href="mailto:lindiwe@linkedme.co.za">lindiwe@linkedme.co.za</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="footer-title">Connect</h3>
+                        <p>Follow us on <a href="https://www.linkedin.com/company/techbridge-innovations" target="_blank">LinkedIn</a></p>
+                        </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="current-year"></span> TechBridge Innovations (Pty) Ltd. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const monthlyPlans = document.getElementById('monthly-plans');
+            const adhocServices = document.getElementById('adhoc-services');
+            const monthlyRadio = document.getElementById('monthly');
+            const adhocRadio = document.getElementById('adhoc');
+
+            monthlyRadio.addEventListener('change', function() {
+                if (this.checked) {
+                    monthlyPlans.style.display = 'block';
+                    adhocServices.style.display = 'none';
+                }
+            });
+
+            adhocRadio.addEventListener('change', function() {
+                if (this.checked) {
+                    monthlyPlans.style.display = 'none';
+                    adhocServices.style.display = 'block';
+                }
+            });
+        });
+    </script>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
+                   
+
+    
