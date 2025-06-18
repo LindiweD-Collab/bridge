@@ -64,34 +64,29 @@
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114881.33237894951!2d27.92313624892461!3d-26.09497044233941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95746b52893661%3A0x402da2855b9a890!2sRandburg!5e0!3m2!1sen!2sza!4v1684321098765" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
-                <div class="fade-in-up" style="animation-delay: 200ms;">
-                    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-  <input type="hidden" name="access_key" value="e79fd123-332f-4645-b01b-ab2083a37bb9">
+              <div class="fade-in-up" style="animation-delay: 200ms;">
+  <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+    <input type="hidden" name="access_key" value="e79fd123-332f-4645-b01b-ab2083a37bb9">
+    <h3 style="text-align: left; margin-bottom: 2rem;">Send Us a Message</h3>
+    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+      <div>
+        <label for="name">Full Name*</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="email">Email*</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="message">Message*</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+      <p id="form-status" style="text-align:center; margin-top: 1rem;"></p>
+    </div>
+  </form>
+</div>
 
-  <h3 style="text-align: left; margin-bottom: 2rem;">Send Us a Message</h3>
-  <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-    
-    <div>
-      <label for="name" style="display:block; font-weight: 600; margin-bottom: 0.5rem;">Full Name*</label>
-      <input type="text" id="name" name="name" required style="width:100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border-color);">
-    </div>
-    
-    <div>
-      <label for="email" style="display:block; font-weight: 600; margin-bottom: 0.5rem;">Email*</label>
-      <input type="email" id="email" name="email" required style="width:100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border-color);">
-    </div>
-    
-    <div>
-      <label for="message" style="display:block; font-weight: 600; margin-bottom: 0.5rem;">Message*</label>
-      <textarea id="message" name="message" rows="5" required style="width:100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border-color);"></textarea>
-    </div>
-    
-    <button type="submit" class="btn btn-primary">Send Message</button>
-    <p id="form-status" style="text-align:center; margin-top: 1rem;"></p>
-  </div>
-</form>
-
-                </div>
             </div>
         </section>
     </main>
@@ -131,5 +126,38 @@
             </div>
         </footer>
     <script src="script.js"></script>
+        <script>
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    status.textContent = "Sending...";
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { Accept: 'application/json' }
+      });
+
+      if (response.ok) {
+        status.textContent = "✅ Thank you! Your message has been sent.";
+        status.style.color = "green";
+        form.reset();
+      } else {
+        const data = await response.json();
+        status.textContent = data.message || "❌ Something went wrong.";
+        status.style.color = "red";
+      }
+    } catch (error) {
+      status.textContent = "❌ Network error. Please try again.";
+      status.style.color = "red";
+    }
+  });
+</script>
+
 </body>
 </html>
