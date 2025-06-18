@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blogs - TechBridge Innovations</title>
+    <title>Blog & Insights - TechBridge Innovations</title>
+    <meta name="description" content="Expert advice and insights on cybersecurity, cloud computing, and automation for South African SMEs.">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="video/logo.png" type="image/png">
 </head>
@@ -15,11 +16,11 @@
                 <span class="logo-text">TechBridge</span>
             </a>
             <nav class="nav-desktop">
-                <a href="index.html" class="nav-link active">Home</a>
+                <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About Us</a>
                 <a href="services.html" class="nav-link">Services</a>
                 <a href="pricing.html" class="nav-link">Pricing</a>
-                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
             <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Open Menu">
@@ -29,13 +30,13 @@
     </header>
 
     <div id="mobile-nav" class="mobile-nav">
-        <button id="mobile-nav-close" class="mobile-nav-close" aria-label="Close Menu">&times;</button>
+        <button id="mobile-nav-close" class="mobile-nav-close" aria-label="Close Menu">×</button>
         <nav class="mobile-nav-links">
-            <a href="index.html" class="mobile-nav-link active">Home</a>
+            <a href="index.html" class="mobile-nav-link">Home</a>
             <a href="about.html" class="mobile-nav-link">About Us</a>
             <a href="services.html" class="mobile-nav-link">Services</a>
             <a href="pricing.html" class="mobile-nav-link">Pricing</a>
-            <a href="blog.html" class="mobile-nav-link">Blog</a>
+            <a href="blog.html" class="mobile-nav-link active">Blog</a>
             <a href="contact.html" class="mobile-nav-link">Contact</a>
         </nav>
     </div>
@@ -51,53 +52,68 @@
         <section class="section">
             <div class="container">
                 <div class="blog-grid fade-in-up">
-                    <a href="blog-post.html" class="blog-card" style="text-decoration: none;">
-                        <img src="video/vecteezy_document-management-system-dms-online-documentation_43535268_000.webp" alt="Cybersecurity topic">
+                    <a href="blog-post-cybersecurity.html" class="blog-card" style="text-decoration: none;">
+                        <img src="video/vecteezy_document-management-system-dms-online-documentation_43535268_000.webp" alt="Cybersecurity shield icon">
                         <div class="blog-card-content">
                             <h3 class="card-title">5 Common Cybersecurity Mistakes SMEs Make</h3>
-                            <p style="font-size: 0.9rem;">Learn how to avoid simple errors that could put your business at risk.</p>
-                            <span class="text-primary" style="font-weight: 600;">Read More &rarr;</span>
+                            <p style="font-size: 0.9rem;">Learn how to avoid simple errors that could put your business at risk of data breaches and financial loss.</p>
+                            <span class="text-primary" style="font-weight: 600; margin-top: 1rem; display: inline-block;">Read More &rarr;</span>
                         </div>
                     </a>
-                    </div>
+                    <a href="blog-post-cloud.html" class="blog-card" style="text-decoration: none;">
+                        <img src="video/saas-concept-collage.jpg" alt="Cloud computing icons">
+                        <div class="blog-card-content">
+                            <h3 class="card-title">Is Cloud Computing Right for Your SME? A Practical Guide</h3>
+                            <p style="font-size: 0.9rem;">Demystifying the cloud: explore the real-world benefits of cost savings, flexibility, and security for your business.</p>
+                            <span class="text-primary" style="font-weight: 600; margin-top: 1rem; display: inline-block;">Read More &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="blog-post-rpa.html" class="blog-card" style="text-decoration: none;">
+                        <img src="video/rpa-concept-with-blue-bright-light.jpg" alt="Robotic Process Automation graphic">
+                        <div class="blog-card-content">
+                            <h3 class="card-title">Unlocking Efficiency with Robotic Process Automation (RPA)</h3>
+                            <p style="font-size: 0.9rem;">Discover how software 'bots' can automate your repetitive tasks, reduce errors, and free up your team for more valuable work.</p>
+                            <span class="text-primary" style="font-weight: 600; margin-top: 1rem; display: inline-block;">Read More &rarr;</span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
-  
+    
     <footer class="footer">
-            <div class="container">
-                <div class="footer-grid">
-                    <div>
-                        <h3 class="footer-title">TechBridge</h3>
-                        <p style="font-size: 0.9rem;">Empowering South African businesses with practical technology solutions and expert support.</p>
-                    </div>
-                    <div>
-                        <h3 class="footer-title">Navigate</h3>
-                        <ul class="footer-links">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="footer-title">Contact</h3>
-                        <ul class="footer-links" style="font-style: normal;">
-                            <li>Randburg, Gauteng</li>
-                            <li><a href="tel:+27761097412">(+27) 76 109 7412</a></li>
-                            <li><a href="mailto:lindiwe@linkedme.co.za">lindiwe@linkedme.co.za</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="footer-title">Connect</h3>
-                        <p>Follow us on <a href="https://www.linkedin.com/company/techbridge-innovations" target="_blank">LinkedIn</a></p>
-                        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-title">TechBridge</h3>
+                    <p style="font-size: 0.9rem;">Empowering South African businesses with practical technology solutions and expert support.</p>
                 </div>
-                <div class="footer-bottom">
-                    <p>&copy; <span id="current-year"></span> TechBridge Innovations (Pty) Ltd. All Rights Reserved.</p>
+                <div>
+                    <h3 class="footer-title">Navigate</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Contact</h3>
+                    <ul class="footer-links" style="font-style: normal;">
+                        <li>Randburg, Gauteng</li>
+                        <li><a href="tel:+27761097412">(+27) 76 109 7412</a></li>
+                        <li><a href="mailto:lindiwe@linkedme.co.za">lindiwe@linkedme.co.za</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Connect</h3>
                 </div>
             </div>
-        </footer>
-      <script src="script.js"></script>
+            <div class="footer-bottom">
+                <p>© <span id="current-year"></span> TechBridge Innovations (Pty) Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
