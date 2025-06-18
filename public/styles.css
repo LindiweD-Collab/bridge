@@ -604,7 +604,7 @@ background-position: center;
 }
 
 .contact-form button:hover {
-  background-color: var(--primary-hover);
+  background-color: #F97316;
 }
 
 #form-status {
