@@ -66,16 +66,31 @@
                 </div>
                 <div class="fade-in-up" style="animation-delay: 200ms;">
                     <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                    <input type="hidden" name="access_key" value="e79fd123-332f-4645-b01b-ab2083a37bb9">
-                        <h3 style="text-align: left; margin-bottom: 2rem;">Send Us a Message</h3>
-                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                            <div><label for="name" style="display:block; font-weight: 600; margin-bottom: 0.5rem;">Full Name*</label><input type="text" id="name" required style="width:100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border-color);"></div>
-                            <div><label for="email" style="display:block; font-weight: 600; margin-bottom: 0.5rem;">Email*</label><input type="email" id="email" required style="width:100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border-color);"></div>
-                            <div><label for="message" style="display:block; font-weight: 600; margin-bottom: 0.5rem;">Message*</label><textarea id="message" rows="5" required style="width:100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border-color);"></textarea></div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                            <p id="form-status" style="text-align:center; margin-top: 1rem;"></p>
-                        </div>
-                    </form>
+  <input type="hidden" name="access_key" value="e79fd123-332f-4645-b01b-ab2083a37bb9">
+
+  <h3 style="text-align: left; margin-bottom: 2rem;">Send Us a Message</h3>
+  <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+    
+    <div>
+      <label for="name" style="display:block; font-weight: 600; margin-bottom: 0.5rem;">Full Name*</label>
+      <input type="text" id="name" name="name" required style="width:100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border-color);">
+    </div>
+    
+    <div>
+      <label for="email" style="display:block; font-weight: 600; margin-bottom: 0.5rem;">Email*</label>
+      <input type="email" id="email" name="email" required style="width:100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border-color);">
+    </div>
+    
+    <div>
+      <label for="message" style="display:block; font-weight: 600; margin-bottom: 0.5rem;">Message*</label>
+      <textarea id="message" name="message" rows="5" required style="width:100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border-color);"></textarea>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Send Message</button>
+    <p id="form-status" style="text-align:center; margin-top: 1rem;"></p>
+  </div>
+</form>
+
                 </div>
             </div>
         </section>
