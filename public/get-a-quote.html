@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get a Free Quote | TechBridge Innovations</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      font-size: 1rem;
+      border: none;
+      background-color: #45484b;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0d6efd;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 20px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Get a Free Quote</h1>
+    <form action="https://formspree.io/f/xpwdeeaw" method="POST">
+      <label for="name">Full Name *</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="email">Email Address *</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="company">Company / Organization</label>
+      <input type="text" name="company" id="company">
+
+      <label for="service">Service Interested In *</label>
+      <select id="service" name="service" style="width:100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border-color); background-color: white; color: #111827;">
+                                    <option value="" disabled selected>Please select a service...</option>
+                                    <option value="it-support">IT Support</option>
+                                    <option value="cybersecurity-consulting">Cybersecurity Consulting & Training</option>
+                                    <option value="cloud-consulting">Cloud Consulting & Migration</option>
+                                    <option value="data-analytics">Data & Analytics</option>
+                                    <option value="automation-rpa">Automation (RPA)</option>
+                                    <option value="custom-software">Custom Software Development</option>
+                                    <option value="other">Other / General Inquiry</option>
+                                </select>
+      <label for="message">Project Details</label>
+      <textarea name="message" id="message" rows="5" placeholder="Tell us a bit about what you need..."></textarea>
+
+      <button type="submit">Request Quote</button>
+    </form>
+    <p class="footer-note">We'll get back to you within 24 hours.</p>
+  </div>
+</body>
+</html>
