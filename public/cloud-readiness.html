@@ -2,211 +2,153 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cloud Readiness Assessment | TechBridge Innovations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cloud Readiness Checker</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #e0f2f1, #e8f5e9);
-      margin: 0;
-      padding: 0;
+      padding: 2rem;
+      max-width: 700px;
+      margin: auto;
+      background: #f9f9f9;
     }
-
-    header {
-      background: linear-gradient(to right, #eb5325, #d46906);
-      color: white;
-      padding: 40px 20px;
+    h1 {
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      color: #e26822;
     }
-
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: white;
-      padding: 40px 30px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-
-    h1, h2 {
-      text-align: center;
-      color: #1f2937;
-    }
-
     label {
       display: block;
-      margin: 20px 0 8px;
-      font-weight: bold;
-      color: #374151;
+      margin-top: 1rem;
+      font-weight: 600;
     }
-
-    select, input[type="text"], textarea {
+    select, input, button {
       width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #cbd5e1;
-      background-color: #f9fafb;
-      transition: border 0.3s;
-      font-size: 1rem;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
-
-    select:focus, input:focus, textarea:focus {
-      border-color: #3b82f6;
-      outline: none;
-    }
-
     button {
-      display: block;
-      width: 100%;
-      padding: 15px;
-      background-image: linear-gradient(to right, #f6573b, #d46906);
+      margin-top: 1.5rem;
+      background: #343638;
       color: white;
-      font-size: 1.1rem;
       font-weight: bold;
-      border: none;
-      border-radius: 10px;
       cursor: pointer;
-      margin-top: 30px;
-      transition: background 0.3s ease;
     }
-
-    button:hover {
-      background-image: linear-gradient(to right, #eb5325, #d46906);
-    }
-
-    .result-box {
-      margin-top: 40px;
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-      font-size: 1.2rem;
-      font-weight: bold;
-      box-shadow: 0 0 12px rgba(0,0,0,0.05);
-    }
-
     .score {
-      font-size: 2rem;
-      margin-bottom: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1rem;
+      border-radius: 10px;
     }
-
-    .fit-high {
-      background-color: #dcfce7;
-      color: #166534;
-      border: 2px solid #22c55e;
+    .low {
+      background: #f8d7da;
+      color: #ec201d;
+      border: 1px solid #f5c6cb;
     }
-
-    .fit-medium {
-      background-color: #fef9c3;
-      color: #854d0e;
-      border: 2px solid #eab308;
+    .medium {
+      background: #fff3cd;
+      color: #f3b90a;
+      border: 1px solid #ffeeba;
     }
-
-    .fit-low {
-      background-color: #fee2e2;
-      color: #991b1b;
-      border: 2px solid #ef4444;
+    .high {
+      background: #d4edda;
+      color: #15d642;
+      border: 1px solid #c3e6cb;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>🌐 Cloud Readiness Assessment</h1>
-    <p>Find out if your business is ready for cloud migration</p>
-  </header>
+  <h1>Cloud Readiness Checker</h1>
 
-  <div class="container">
-    <form id="assessmentForm">
-      <h2> Step 1: Your Tech & Team</h2>
+  <form id="readinessForm">
 
-      <label for="it">Current IT Infrastructure</label>
-      <select id="it" required>
-        <option value="">Select one...</option>
-        <option value="2">On-prem only</option>
-        <option value="4">Hybrid (on-prem + cloud)</option>
-        <option value="5">Cloud-first</option>
-      </select>
+    <label for="env">Current IT Infrastructure:</label>
+    <select id="env">
+      <option value="1">On‑Premises</option>
+      <option value="2">Hybrid</option>
+      <option value="3">Cloud‑Native</option>
+    </select>
 
-      <label for="team">Do you have an internal IT team?</label>
-      <select id="team" required>
-        <option value="">Select one...</option>
-        <option value="3">No</option>
-        <option value="4">Yes, small</option>
-        <option value="5">Yes, dedicated</option>
-      </select>
+    <label for="team">Do you have an internal IT team?</label>
+    <select id="team">
+      <option value="1">No</option>
+      <option value="2">Partially</option>
+      <option value="3">Yes</option>
+    </select>
 
-      <h2> Step 2: Security & Planning</h2>
+    <!-- Step 2 -->
+    <label for="backup">Do you have a regular data backup process?</label>
+    <select id="backup">
+      <option value="1">No</option>
+      <option value="2">Somewhat</option>
+      <option value="3">Yes</option>
+    </select>
 
-      <label for="backup">Do you have a regular data backup process?</label>
-      <select id="backup" required>
-        <option value="">Select one...</option>
-        <option value="2">No</option>
-        <option value="4">Partially</option>
-        <option value="5">Yes</option>
-      </select>
+    <label for="compliance">Are security and compliance standards in place?</label>
+    <select id="compliance">
+      <option value="1">Not Yet</option>
+      <option value="2">Partially</option>
+      <option value="3">Fully</option>
+    </select>
 
-      <label for="security">Are security and compliance standards in place?</label>
-      <select id="security" required>
-        <option value="">Select one...</option>
-        <option value="2">No</option>
-        <option value="4">Some policies</option>
-        <option value="5">Fully compliant</option>
-      </select>
+    <label for="budget">Do you have a cloud migration budget allocated?</label>
+    <select id="budget">
+      <option value="1">No</option>
+      <option value="2">Maybe</option>
+      <option value="3">Yes</option>
+    </select>
 
-      <label for="budget">Do you have a cloud migration budget allocated?</label>
-      <select id="budget" required>
-        <option value="">Select one...</option>
-        <option value="2">No budget</option>
-        <option value="4">Tentative budget</option>
-        <option value="5">Fully budgeted</option>
-      </select>
+    <!-- Step 3 -->
+    <label for="apps">How many critical applications do you use?</label>
+    <select id="apps">
+      <option value="1">Few (< 5)</option>
+      <option value="2">Moderate (5–20)</option>
+      <option value="3">Many (> 20)</option>
+    </select>
 
-      <button type="submit"> Check My Readiness</button>
-    </form>
+    <label for="timeline">What is your ideal migration timeline?</label>
+    <select id="timeline">
+      <option value="1">6+ months</option>
+      <option value="2">3–6 months</option>
+      <option value="3">< 3 months</option>
+    </select>
 
-    <div id="result" class="result-box" style="display:none;">
-      <div class="score" id="scoreText"></div>
-      <div id="fitLevel"></div>
-    </div>
-  </div>
+    <button type="button" id="checkBtn">Check Readiness</button>
+  </form>
+
+  <div id="score" class="score"></div>
 
   <script>
-    const form = document.getElementById("assessmentForm");
-    const resultBox = document.getElementById("result");
-    const scoreText = document.getElementById("scoreText");
-    const fitLevel = document.getElementById("fitLevel");
+    const form = document.getElementById('readinessForm');
+    const scoreEl = document.getElementById('score');
 
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
+    document.getElementById('checkBtn').addEventListener('click', () => {
+      const values = Array.from(form.elements)
+        .filter(el => el.tagName === 'SELECT')
+        .map(el => parseInt(el.value));
+      
+      const total = values.reduce((a, b) => a + b, 0);
+      let level = '';
+      let cssClass = '';
 
-      const scores = [
-        parseInt(document.getElementById("it").value),
-        parseInt(document.getElementById("team").value),
-        parseInt(document.getElementById("backup").value),
-        parseInt(document.getElementById("security").value),
-        parseInt(document.getElementById("budget").value)
-      ];
-
-      const total = scores.reduce((a, b) => a + b, 0);
-      const avg = Math.round(total / scores.length);
-
-      resultBox.style.display = "block";
-
-      scoreText.textContent = `Readiness Score: ${avg}/5`;
-
-      if (avg >= 4.5) {
-        resultBox.className = "result-box fit-high";
-        fitLevel.textContent = "✅ You're Cloud-Ready! Migration can begin.";
-      } else if (avg >= 3) {
-        resultBox.className = "result-box fit-medium";
-        fitLevel.textContent = "🛠 You're almost there. Let's fix a few gaps.";
+      if (total <= 10) {
+        level = 'Low Readiness';
+        cssClass = 'low';
+      } else if (total <= 16) {
+        level = 'Medium Readiness';
+        cssClass = 'medium';
       } else {
-        resultBox.className = "result-box fit-low";
-        fitLevel.textContent = "🚧 Not ready yet. Let's help you prepare properly.";
+        level = 'High Readiness';
+        cssClass = 'high';
       }
+
+      scoreEl.className = 'score ' + cssClass;
+      scoreEl.textContent = `${level} (${total} / 21)`;
     });
   </script>
-
 </body>
 </html>
