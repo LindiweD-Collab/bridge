@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quote Estimator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ec830a, #ce3f14);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pricing-card {
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 16px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      max-width: 480px;
+      width: 90%;
+      color: #333;
+    }
+
+    .pricing-card h2 {
+      margin-top: 0;
+      font-size: 22px;
+      text-align: center;
+      color: #ce3f14;
+    }
+
+    label {
+      font-weight: 600;
+      margin-top: 16px;
+      display: block;
+      font-size: 14px;
+    }
+
+    select {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+
+    .description {
+      margin: 10px 0;
+      font-size: 13px;
+      font-style: italic;
+      color: #666;
+    }
+
+    .features-list {
+      margin-top: 10px;
+    }
+
+    .features-list label {
+      font-weight: normal;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .features-list input {
+      margin-right: 10px;
+    }
+
+    h3 {
+      font-size: 18px;
+      text-align: center;
+      margin-top: 20px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pricing-card">
+    <h2>Website Quote Estimator</h2>
+
+    <label for="siteType">Select a Website Type:</label>
+    <select id="siteType">
+      <optgroup label="Basic Sites">
+        <option value="300" data-desc="Perfect for promotions or single-page showcases.">Basic Landing Page – R300</option>
+        <option value="600" data-desc="Ideal for creatives, freelancers, and professionals.">Portfolio / Personal Brand – R600</option>
+        <option value="400" data-desc="For blogging and regular content publishing.">Blog or News Website – R400</option>
+      </optgroup>
+
+      <optgroup label="Business & Service Sites">
+        <option value="500" data-desc="Multi-page site for services, team, and contact.">Business Website – R500</option>
+        <option value="750" data-desc="Designed for NGOs with donations & volunteer tools.">Nonprofit / NGO Website – R750</option>
+        <option value="700" data-desc="Includes booking calendar, reminders, and more.">Booking / Appointment Website – R700</option>
+      </optgroup>
+
+      <optgroup label="Advanced Sites">
+        <option value="800" data-desc="Supports products, checkout, and payments.">E-commerce Website – R800</option>
+        <option value="900" data-desc="Online course portal with videos, quizzes, & certificates.">Learning Management System (LMS) – R900</option>
+        <option value="950" data-desc="Great for directories like real estate, services, or classifieds.">Directory / Listing Platform – R950</option>
+        <option value="1200" data-desc="Custom dashboard or SaaS platform for data & admin control.">SaaS Dashboard / Admin Panel – R1200+</option>
+        <option value="1000" data-desc="Fully custom app with user accounts, data features, etc.">Custom Web App – R1000+</option>
+      </optgroup>
+    </select>
+
+    <div class="description" id="siteDescription"></div>
+
+    <label>Relevant Features:</label>
+    <div class="features-list" id="featuresContainer">
+      <!-- Features will load here -->
+    </div>
+
+    <h3>Total Estimate: R<span id="totalPrice">0</span></h3>
+  </div>
+
+  <script>
+    const siteType = document.getElementById('siteType');
+    const featuresContainer = document.getElementById('featuresContainer');
+    const siteDescription = document.getElementById('siteDescription');
+
+    const featuresBySite = {
+      default: [
+        { name: "Contact Form", value: 50 },
+        { name: "Blog Setup", value: 80 }
+      ],
+      ecommerce: [
+        { name: "Payment Integration", value: 200 },
+        { name: "Product Inventory", value: 120 },
+        { name: "Shipping Calculator", value: 90 }
+      ],
+      booking: [
+        { name: "Booking System", value: 150 },
+        { name: "Calendar Integration", value: 100 }
+      ],
+      lms: [
+        { name: "Student Dashboard", value: 200 },
+        { name: "Course Builder", value: 180 }
+      ],
+      dashboard: [
+        { name: "User Management", value: 180 },
+        { name: "Analytics Dashboard", value: 220 }
+      ]
+    };
+
+    function getSiteCategory(text) {
+      text = text.toLowerCase();
+      if (text.includes("e-commerce")) return "ecommerce";
+      if (text.includes("booking")) return "booking";
+      if (text.includes("lms")) return "lms";
+      if (text.includes("dashboard") || text.includes("admin")) return "dashboard";
+      return "default";
+    }
+
+    function loadFeatures(siteText) {
+      const category = getSiteCategory(siteText);
+      const selectedFeatures = featuresBySite[category] || featuresBySite.default;
+
+      featuresContainer.innerHTML = "";
+      selectedFeatures.forEach(f => {
+        const id = f.name.toLowerCase().replace(/\s+/g, '-');
+        featuresContainer.innerHTML += `
+          <label><input type="checkbox" class="feature" value="${f.value}"> ${f.name} (R${f.value})</label>
+        `;
+      });
+      bindFeatureListeners();
+    }
+
+    function bindFeatureListeners() {
+      document.querySelectorAll('.feature').forEach(f => {
+        f.addEventListener('change', calculateTotal);
+      });
+    }
+
+    function updateDescription() {
+      const selected = siteType.options[siteType.selectedIndex];
+      siteDescription.textContent = selected.dataset.desc || "";
+    }
+
+    function calculateTotal() {
+      const basePrice = parseInt(siteType.value);
+      let featuresTotal = 0;
+      document.querySelectorAll('.feature').forEach(f => {
+        if (f.checked) featuresTotal += parseInt(f.value);
+      });
+      document.getElementById('totalPrice').textContent = basePrice + featuresTotal;
+    }
+
+    siteType.addEventListener('change', () => {
+      updateDescription();
+      loadFeatures(siteType.options[siteType.selectedIndex].text);
+      calculateTotal();
+    });
+
+    updateDescription();
+    loadFeatures(siteType.options[siteType.selectedIndex].text);
+    calculateTotal();
+  </script>
+
+</body>
+</html>
