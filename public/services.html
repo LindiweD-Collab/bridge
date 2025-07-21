@@ -81,6 +81,7 @@
                            <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>Enterprise System Integration</li>
                            <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>Workflow Automation Tools</li>
                         </ul>
+                        <button id="openCalcBtn" class="btn btn-secondary" style="margin-top: 1rem;"> Open Quote Calculator</button>
                         <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Build Your Solution</a>
                     </div>
                 </div>
@@ -203,5 +204,61 @@
         </footer>
     </div>
     <script src="script.js"></script>
+
+<div id="calcModal" style="
+  display: none;
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+">
+  <div style="
+    background: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    position: relative;
+  ">
+    <button id="closeCalcBtn" style="
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      font-weight: bold;
+    ">&times;</button>
+
+    <iframe src="calc.html" style="width: 100%; height: 70vh; border: none; border-radius: 0.5rem;"></iframe>
+  </div>
+</div>
+
+<script>
+  const openBtn = document.getElementById('openCalcBtn');
+  const closeBtn = document.getElementById('closeCalcBtn');
+  const modal = document.getElementById('calcModal');
+
+  openBtn.addEventListener('click', () => {
+    modal.style.display = 'flex';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  modal.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+</script>
+
 </body>
 </html>
