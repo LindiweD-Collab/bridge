@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPA Savings Calculator - TechBridge Innovations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="video/logo.png" type="image/png">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="video/logo.png" alt="TechBridge Logo" width="40" height="40">
+                <span class="logo-text">TechBridge</span>
+            </a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Open Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-nav" class="mobile-nav">
+        </div>
+
+    <main>
+        <section class="page-header-rpa">
+            <div class="container text-center fade-in-up">
+                <h1>RPA Savings Calculator</h1>
+                <div class="section-divider"></div>
+                <p style="max-width: 700px; margin: 0 auto; font-size: 1.125rem;">Discover how much time and money your business can save by automating repetitive manual tasks. Fill in the details below to see the potential.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container" style="max-width: 900px;">
+                <div class="rpa-grid">
+                    <div class="card" style="padding: 2.5rem;">
+                        <h3 class="text-center" style="margin-bottom: 2rem;">Describe a Repetitive Task</h3>
+                        <form id="rpa-form">
+                            <div class="form-group">
+                                <label for="task-time">Time to complete the task once (in minutes):</label>
+                                <input type="number" id="task-time" class="form-control" value="15" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="task-frequency">How many times is this task done per week?</label>
+                                <input type="number" id="task-frequency" class="form-control" value="20" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="employee-count">Number of employees doing this task:</label>
+                                <input type="number" id="employee-count" class="form-control" value="2" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="employee-cost">Avg. employee hourly cost (in Rands):</label>
+                                <input type="number" id="employee-cost" class="form-control" value="150" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Calculate Savings</button>
+                        </form>
+                    </div>
+
+                    <div class="card card-dark" style="padding: 2.5rem;">
+                        <div id="rpa-results" class="text-center">
+                            <h3 style="color: white; margin-bottom: 2rem;">Potential Annual Savings</h3>
+                            <div class="result-box">
+                                <span class="result-label">Time Saved</span>
+                                <span id="time-saved" class="result-value">...</span>
+                            </div>
+                            <div class="result-box">
+                                <span class="result-label">Money Saved</span>
+                                <span id="money-saved" class="result-value">...</span>
+                            </div>
+                            <p id="results-message" style="margin-top: 2rem; color: #D1D5DB;">Fill in the form to see your potential savings.</p>
+                           <button id="cta-button" class="btn btn-primary" style="display:none; margin-top: 1rem;">Automate Your Business</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="signup-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="modal-close-btn">&times;</button>
+            <h3>Start Automating Your Business</h3>
+            <p>Enter your email below, and a TechBridge consultant will be in touch to discuss your results.</p>
+            <form id="signup-form">
+                <input type="email" id="signup-email" placeholder="Enter your email address" class="form-control" required>
+                <input type="hidden" id="hidden-time-saved" name="Time Saved">
+                <input type="hidden" id="hidden-money-saved" name="Money Saved">
+                <button type="submit" id="submit-signup-btn" class="btn btn-primary" style="width: 100%;">Get Started</button>
+            </form>
+            <p id="modal-status" style="margin-top: 1rem; text-align: center;"></p>
+        </div>
+    </div>
+
+
+    <footer class="footer"> </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -612,3 +612,197 @@ background-position: center;
   margin-top: 1rem;
   font-weight: 500;
 }
+
+/* --- Cloud Calculator Styles --- */
+.text-center {
+    text-align: center;
+}
+.text-muted {
+    color: var(--slate-gray);
+    margin-bottom: 0.5rem;
+}
+.display-5 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.2;
+}
+.progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+.progress-bar-container.large {
+    height: 30px;
+    border-radius: 15px;
+}
+.progress-bar-fill {
+    height: 100%;
+    width: 0;
+    background-color: var(--primary-orange);
+    border-radius: 5px;
+    transition: width 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+}
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+@media(min-width: 768px) {
+    .options-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.options-grid .btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--dark-navy);
+}
+.options-grid .btn:hover {
+    background-color: var(--light-gray);
+    border-color: var(--primary-orange);
+    transform: translateY(-3px);
+}
+
+/* --- Risk Assessor Styles --- */
+.risk-badge {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+}
+
+.risk-badge.low {
+    background-color: var(--accent-green); /* #10B981 */
+}
+
+.risk-badge.medium {
+    background-color: #F59E0B; /* Amber */
+}
+
+.risk-badge.high {
+    background-color: #EF4444; /* Red */
+}
+
+#recommendation-list li {
+    align-items: flex-start;
+}
+
+/* --- RPA Calculator Styles --- */
+.page-header-rpa {
+    position: relative;
+    padding: 7rem 0;
+    text-align: center;
+    color: var(--white);
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('video/rpa-concept-with-blue-bright-light.jpg');
+}
+.page-header-rpa h1, .page-header-rpa p {
+    color: var(--white);
+}
+.rpa-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+@media(min-width: 992px) {
+    .rpa-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark-navy);
+}
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+.card-dark {
+    background-color: var(--dark-navy);
+}
+.result-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+.result-label {
+    display: block;
+    font-size: 1rem;
+    color: #D1D5DB;
+    margin-bottom: 0.5rem;
+}
+.result-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+/* --- Signup Modal Styles --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    position: relative;
+    text-align: left;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--slate-gray);
+    cursor: pointer;
+}
+.modal-content h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.modal-content p {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+#signup-form input {
+    margin-bottom: 1rem;
+}

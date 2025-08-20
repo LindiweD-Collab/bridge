@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Readiness Calculator - TechBridge Innovations</title>
+    <title>Cybersecurity Risk Assessor - TechBridge Innovations</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="video/logo.png" type="image/png">
 </head>
@@ -28,58 +28,49 @@
         </div>
     </header>
 
-     <div id="mobile-nav" class="mobile-nav">
+    <div id="mobile-nav" class="mobile-nav">
         </div>
 
     <main>
-        <section class="page-header-services">
+        <section class="page-header-about">
             <div class="container text-center fade-in-up">
-                <h1>Cloud Readiness Calculator</h1>
+                <h1>Cybersecurity Risk Assessor</h1>
                 <div class="section-divider"></div>
-                <p style="max-width: 700px; margin: 0 auto; font-size: 1.125rem;">Answer a few simple questions to get an instant analysis of your business's cloud potential and estimated costs.</p>
+                <p style="max-width: 700px; margin: 0 auto; font-size: 1.125rem;">Is your business protected? Answer 5 questions to get an instant risk assessment and find out how to improve your security.</p>
             </div>
         </section>
 
         <section class="section">
             <div class="container" style="max-width: 800px;">
                 <div class="card" style="padding: 2.5rem; box-shadow: 0 10px 30px var(--shadow-dark);">
-                    <div id="quiz-container">
-                        <div id="question-area" class="text-center">
-                            <p class="text-muted" id="question-counter"></p>
-                            <h3 id="question-text" style="margin-bottom: 2rem;"></h3>
+                    <div id="risk-quiz-container">
+                        <div id="risk-question-area" class="text-center">
+                            <p class="text-muted" id="risk-question-counter"></p>
+                            <h3 id="risk-question-text" style="margin-bottom: 2rem;"></h3>
                             <div class="progress-bar-container">
-                                <div class="progress-bar-fill" id="progress-bar"></div>
+                                <div class="progress-bar-fill" id="risk-progress-bar"></div>
                             </div>
-                            <div id="options-container" class="options-grid">
+                            <div id="risk-options-container" class="options-grid">
                                 </div>
                         </div>
                     </div>
 
-                    <div id="results-container" class="text-center fade-in-up" style="display:none;">
-                        <h2 style="margin-bottom: 2rem;">Your Cloud Readiness Report</h2>
-                        
+                    <div id="risk-results-container" class="text-center fade-in-up" style="display:none;">
+                        <h2 style="margin-bottom: 1rem;">Your Risk Assessment Report</h2>
                         <div style="margin: 2.5rem 0;">
-                            <h4 class="text-muted">Readiness Score</h4>
-                            <div class="progress-bar-container large">
-                                <div class="progress-bar-fill" id="readiness-bar">
-                                    <span id="readiness-text"></span>
-                                </div>
-                            </div>
+                            <h4 class="text-muted">Overall Risk Level</h4>
+                            <div id="risk-level-badge" class="risk-badge"></div>
                         </div>
                         
-                        <div style="margin: 2.5rem 0;">
-                            <h4 class="text-muted">Estimated Monthly Cost</h4>
-                            <h3 id="cost-text" class="display-5" style="font-weight: 700; color: var(--primary-orange);"></h3>
+                        <div style="margin: 2.5rem 0; text-align: left;">
+                           <h4 class="text-muted text-center">Personalized Recommendations</h4>
+                           <ul id="recommendation-list" class="feature-list" style="margin-top: 1.5rem;">
+                                </ul>
                         </div>
 
-                        <div style="margin: 2.5rem 0;">
-                           <h4 class="text-muted">Our Recommendation</h4>
-                           <p id="recommendation-text" style="font-size: 1.1rem;"></p>
-                        </div>
-
-                        <p style="margin-top: 2.5rem;">This report is an estimate. For a detailed and accurate quote, let's have a chat.</p>
-                        <a href="contact.html" class="btn btn-primary" style="margin-right: 0.5rem;">Schedule a Free Consultation</a>
-                        <button id="restart-btn" class="btn btn-secondary">Start Over</button>
+                        <p style="margin-top: 2.5rem;">Your security is critical. A high-risk score indicates potential vulnerabilities that could impact your business.</p>
+                        <a href="contact.html" class="btn btn-primary" style="margin-right: 0.5rem;">Book a Free Security Consultation</a>
+                        <button id="risk-restart-btn" class="btn btn-secondary">Assess Again</button>
                     </div>
                 </div>
             </div>
