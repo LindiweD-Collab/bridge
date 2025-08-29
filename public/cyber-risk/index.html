@@ -69,13 +69,28 @@
                         </div>
 
                         <p style="margin-top: 2.5rem;">Your security is critical. A high-risk score indicates potential vulnerabilities that could impact your business.</p>
-                        <a href="/contact" class="btn btn-primary" style="margin-right: 0.5rem;">Book a Free Security Consultation</a>
+                        
                         <button id="risk-restart-btn" class="btn btn-secondary">Assess Again</button>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <div id="signup-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="modal-close-btn">&times;</button>
+            <h3>Book a Free Security Consultation</h3>
+            <p>Enter your email below, and a TechBridge consultant will be in touch to discuss your results.</p>
+            <form id="signup-form">
+                <input type="email" id="signup-email" placeholder="Enter your email address" class="form-control" required>
+                <input type="hidden" id="hidden-time-saved" name="Time Saved">
+                <input type="hidden" id="hidden-money-saved" name="Money Saved">
+                <button type="submit" id="submit-signup-btn" class="btn btn-primary" style="width: 100%;">Get Started</button>
+            </form>
+            <p id="modal-status" style="margin-top: 1rem; text-align: center;"></p>
+        </div>
+    </div>
 
     <footer class="footer">
         </footer>
