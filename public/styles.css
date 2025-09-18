@@ -10,8 +10,8 @@ padding: 0;
 }
 
 :root {
---primary-orange: #F97316;
---primary-orange-dark: #EA580C;
+--primary-color: #10B981; 
+--primary-color-dark: #059669; 
 --accent-green: #10B981;
 --dark-navy: #111827;
 --slate-gray: #4B5563;
