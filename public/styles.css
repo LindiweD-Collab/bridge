@@ -22,10 +22,9 @@ padding: 0;
 
 :root {
 
---primary-color: #10B981; 
+--primary-orange: #F97316;
 
---primary-color-dark: #059669; 
-
+--primary-orange-dark: #EA580C; 
 --accent-green: #10B981;
 
 --dark-navy: #111827;
